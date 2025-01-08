@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 function ProductCard({ item }) {
-  const handleClick = (product, event) => {
+  const handleClick = (event, product) => {
     event.preventDefault();
     alert(`${product} added to cart!`);
   };
@@ -23,8 +22,7 @@ function ProductCard({ item }) {
         <div className="d-flex justify-content-between align-items-center position-absolute w-100 bottom-0 end-0 p-3">
           <span className="fw-bold">${item.price}</span>
           <a
-            href=""
-            onClick={() => handleClick(item.title)}
+            onClick={() => handleClick(event, item.title)}
             className="btn btn-primary btn-sm"
           >
             View Details
